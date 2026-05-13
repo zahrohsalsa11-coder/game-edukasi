@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Literasi Soal 1</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+
+  <!-- BACK BUTTON -->
+  <img 
+    src="img/back.jpg" 
+    class="back-icon" 
+    onclick="playSound(); keBeranda();"
+    alt="back"
+  >
+
+  <!-- BACKSOUND -->
+  <audio id="bgm" loop>
+    <source src="audio/backsound.mp3" type="audio/mp3" />
+  </audio>
+
+  <!-- CLICK SOUND -->
+  <audio id="klikSound">
+    <source src="audio/click.mp3" type="audio/mp3" />
+  </audio>
+
+  <h1 class="literasi-title">Soal 1 - Susun Kata</h1>
+  
+    <div class="soal-box">
+      <!-- GAMBAR PETUNJUK -->
+      <p class="hint-text">Susun huruf menjadi kata yang benar!</p>
+      <img src="img/baca.jpg" class="hint-img" />
+      <p class="hint-desc">Petunjuk: Kegiatan melihat buku</p>
+
+      <!-- DROP AREA -->
+      <div class="drop-box" id="jawaban1"></div>
+
+      <!-- HURUF -->
+      <div class="huruf-container">
+        <div class="huruf" draggable="true">A</div>
+        <div class="huruf" draggable="true">C</div>
+        <div class="huruf" draggable="true">A</div>
+        <div class="huruf" draggable="true">B</div>
+      </div>
+
+      <button class="reset-btn" onclick="resetJawaban()">
+        Reset
+      </button>
+
+      <!-- BUTTON CEK -->
+      <button class="cek-btn" onclick="cekSoal1()">
+        Cek Jawaban
+      </button>
+
+      <!-- SOUND BENAR -->
+      <audio id="benarSound">
+        <source src="audio/benar.mp3" type="audio/mp3">
+      </audio>
+
+      <!-- SOUND SALAH -->
+      <audio id="salahSound">
+        <source src="audio/salah.mp3" type="audio/mp3">
+      </audio>
+
+        <!-- POPUP HASIL GAMBAR -->
+      <div id="popupHasil" class="popup hidden">
+      <div class="popup-box">
+        
+        <img id="popupImg" src="" />
+
+      <button onclick="playSound(); keSoal2()">
+        NEXT
+      </button>
+      </div>
+</div>
+    <script src="script.js"></script>
+  </body>
+</html>

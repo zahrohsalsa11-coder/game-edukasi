@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Matematika</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+  <!-- MENU -->
+  <div id="menu">
+
+    <!-- JUDUL -->
+    <h1 class="judul">
+      <span>R</span>
+      <span>u</span>
+      <span>a</span>
+      <span>n</span>
+      <span>g</span>
+
+      <span class="space"></span>
+
+      <span>H</span>
+      <span>i</span>
+      <span>t</span>
+      <span>u</span>
+      <span>n</span>
+      <span>g</span>
+    </h1>
+
+   <!-- BACKSOUND -->
+<audio id="bgm" loop>
+  <source src="audio/backsound.mp3" type="audio/mp3" />
+</audio>
+
+<!-- SOUND BUTTON -->
+<audio id="klikSound">
+  <source src="audio/click.mp3" type="audio/mp3">
+</audio>
+
+<!-- MENU BUTTON KIRI -->
+<div class="side-button">
+
+  <!-- SOUND -->
+  <div class="sound-box">
+
+    <!-- TOMBOL SOUND -->
+    <img 
+      src="img/sound.jpg" 
+      class="sound-btn"
+      onclick="playSound(); toggleVolume()"
+    >
+
+    <!-- SLIDER -->
+    <div class="volume-container" id="volumeContainer">
+
+      <input
+        type="range"
+        id="volumeSlider"
+        min="0"
+        max="1"
+        step="0.1"
+        value="0.3"
+      >
+
+    </div>
+  </div>
+
+  <!-- INFO -->
+<!-- INFO BUTTON -->
+<img 
+  src="img/info.jpg" 
+  class="btn-side"
+  onclick="playSound(); info()"
+/>
+
+<!-- POPUP INFO -->
+<div id="infoPopup" class="popup hidden">
+
+  <div class="info-box">
+
+    <h1>Tentang Game</h1>
+
+    <p>
+      Ruang Hitung adalah game edukasi anak SD 
+      yang dibuat untuk membantu anak belajar 
+      membaca dan berhitung dengan cara yang 
+      menyenangkan dan interaktif 🎮✨
+    </p>
+
+    <h2>Pembuat</h2>
+
+    <p>
+      Lidiya Agustin E.
+    </p>
+
+    <button onclick="playSound(); tutupInfo()">
+      Tutup
+    </button>
+
+  </div>
+
+</div>
+
+  <!-- OUT -->
+  <img 
+    src="img/out.jpg" 
+    class="btn-side"
+    onclick="playSound();popupOut()"
+  >
+
+  <!-- POPUP OUT -->
+<div id="outPopup" class="popup hidden">
+
+  <div class="out-box">
+
+    <h1>Keluar Game?</h1>
+
+    <p>
+      Apakah anda yakin ingin keluar dari game ini?
+    </p>
+
+    <div class="out-button">
+
+      <!-- IYA -->
+      <button onclick="playSound(); keluarGame()">
+        Iya
+      </button>
+
+      <!-- TIDAK -->
+      <button onclick="playSound(); tutupOut()">
+        Tidak
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+</div>
+
+<!-- PLAY TENGAH -->
+<div class="play-container">
+
+  <img 
+    src="img/play.jpg" 
+    class="btn-play"
+    onclick="playSound(); mulaiGame()"  >
+  <!-- PANDUAN -->  
+    <img 
+      src="img/panduan.jpg" 
+      class="btn-panduan"
+      onclick="playSound();panduan()"
+    >
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Numerasi</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- BACK BUTTON -->
+    <img
+      src="img/back.jpg"
+      class="back-icon"
+      onclick="
+        playSound();
+        kePilih();
+      "
+      alt="back"
+    />
+
+    <!-- BACKSOUND -->
+    <audio id="bgm" loop>
+      <source src="audio/backsound.mp3" type="audio/mp3" />
+    </audio>
+
+    <!-- CLICK SOUND -->
+    <audio id="klikSound">
+      <source src="audio/click.mp3" type="audio/mp3" />
+    </audio>
+
+    <h1 class="numerasi-title">🔢 Soal 2 - Hitung Dasar</h1>
+
+    <div class="soal-box numerasi-box">
+      <!-- PETUNJUK -->
+      <p class="hint-text">Pilih jawaban yang benar!</p>
+
+      <!-- GAMBAR -->
+      <img src="img/numerasi2.jpg" class="numerasi-img" />
+
+      <!-- SOAL -->
+      <p class="hint-desc">9 -4 = ?</p>
+
+      <!-- PILIHAN -->
+      <div class="pilihan-container">
+        <button class="pilihan-btn" onclick="cekNumerasi2(3)">3</button>
+
+        <button class="pilihan-btn" onclick="cekNumerasi2(4)">4</button>
+
+        <button class="pilihan-btn" onclick="cekNumerasi2(5)">5</button>
+
+        <button class="pilihan-btn" onclick="cekNumerasi2(6)">6</button>
+      </div>
+    </div>
+
+    <!-- SOUND BENAR -->
+<audio id="benarSound">
+  <source src="audio/benar.mp3" type="audio/mp3">
+</audio>
+
+<!-- SOUND SALAH -->
+<audio id="salahSound">
+  <source src="audio/salah.mp3" type="audio/mp3">
+</audio>
+
+    <!-- POPUP -->
+    <div id="popupHasil" class="popup hidden">
+      <div class="popup-box">
+        <img id="popupImg" src="" />
+
+        <button
+          onclick="
+            playSound();
+            keNumerasi3();
+          "
+        >
+          NEXT
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

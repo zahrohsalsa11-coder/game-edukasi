@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="id">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Pencapaian</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap"
+    rel="stylesheet"
+  />
+
+</head>
+
+<body>
+
+<!-- BACKSOUND -->
+<audio id="bgm" loop>
+  <source src="audio/backsound.mp3" type="audio/mp3">
+</audio>
+
+<!-- CLICK SOUND -->
+<audio id="klikSound">
+  <source src="audio/click.mp3" type="audio/mp3">
+</audio>
+
+<!-- JUDUL -->
+<h1 class="achievement-title">
+  🏆 PENCAPAIAN
+</h1>
+
+<!-- BOX -->
+<div class="achievement-box">
+
+  <!-- GAMBAR -->
+  <img
+    src="img/thropy.jpg"
+    class="trophy-img"
+  >
+
+  <!-- SCORE BENAR -->
+  <h2 id="scoreBenar">
+    Benar : 0
+  </h2>
+
+  <!-- SCORE SALAH -->
+  <h2 id="scoreSalah">
+    Salah : 0
+  </h2>
+
+  <!-- BUTTON MAIN LAGI -->
+  <button
+    class="main-menu-btn"
+    onclick="
+      playSound();
+      resetGame();
+    "
+  >
+    MAIN LAGI
+  </button>
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+
+/* TAMPILKAN SCORE */
+
+document.getElementById("scoreBenar").innerText =
+  "Benar : " + localStorage.getItem("benar");
+
+document.getElementById("scoreSalah").innerText =
+  "Salah : " + localStorage.getItem("salah");
+
+</script>
+
+</body>
+</html>

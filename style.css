@@ -1,0 +1,793 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background-image: url("img/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+  height: 100 vh;
+}
+
+/* =========================
+   MENU UTAMA
+========================= */
+#menu {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* JUDUL */
+.judul {
+  font-size: 100px;
+  font-family: "Titan One", cursive;
+  margin-bottom: 140px;
+  margin-top: -80px;
+}
+
+/* ANIMASI HURUF */
+.judul span {
+  display: inline-block;
+  animation: lompat 1s infinite;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* WARNA HURUF */
+.judul span:nth-child(1) {
+  color: red;
+  animation-delay: 0s;
+}
+.judul span:nth-child(2) {
+  color: orange;
+  animation-delay: 0.1s;
+}
+.judul span:nth-child(3) {
+  color: red;
+  animation-delay: 0.2s;
+}
+.judul span:nth-child(4) {
+  color: orange;
+  animation-delay: 0.3s;
+}
+.judul span:nth-child(5) {
+  color: red;
+  animation-delay: 0.4s;
+}
+
+.judul span:nth-child(7) {
+  color: orange;
+  animation-delay: 0.5s;
+}
+.judul span:nth-child(8) {
+  color: red;
+  animation-delay: 0.6s;
+}
+.judul span:nth-child(9) {
+  color: orange;
+  animation-delay: 0.7s;
+}
+.judul span:nth-child(10) {
+  color: red;
+  animation-delay: 0.8s;
+}
+.judul span:nth-child(11) {
+  color: orange;
+  animation-delay: 0.9s;
+}
+.judul span:nth-child(12) {
+  color: red;
+  animation-delay: 1s;
+}
+
+/* SPASI */
+.space {
+  width: 30px;
+}
+
+/* ANIMASI */
+@keyframes lompat {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* =========================
+   BUTTON MENU
+========================= */
+.play-container {
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-play {
+  width: 200px;
+  height: 120px;
+  object-fit: cover;
+  cursor: pointer;
+  margin-bottom: -55px;
+  transition: 0.3s;
+}
+
+.btn-panduan {
+  width: 200px;
+  height: 120px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* SIDE BUTTON */
+.side-button {
+  position: absolute;
+  top: 70px;
+  left: 3px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.btn-side {
+  width: 70px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* HOVER */
+.btn-play:hover,
+.btn-panduan:hover,
+.btn-side:hover {
+  transform: scale(1.08) rotate(-2deg);
+}
+
+.btn-play:active,
+.btn-panduan:active,
+.btn-side:active {
+  transform: scale(0.95);
+}
+
+/* =========================
+   UTIL
+========================= */
+.hidden {
+  display: none !important;
+}
+
+/* =========================
+   HALAMAN PILIH GAME
+========================= */
+#pilihPage {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* JUDUL */
+.judul-pilih {
+  font-size: 60px;
+  font-family: "Titan One", cursive;
+  color: rgb(226, 194, 107);
+  margin-bottom: 40px;
+}
+
+/* CONTAINER CARD */
+.pilih-container {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CARD */
+.game-card {
+  width: 250px;
+  background: rgb(226, 194, 107);;
+  border-radius: 20px;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* HOVER */
+.game-card:hover {
+  transform: scale(1.05);
+}
+
+/* 🔥 FIX GAMBAR */
+.game-card img {
+  width: 150px; /* kunci ukuran */
+  height: 150px; /* biar konsisten */
+  object-fit: contain; /* biar tidak pecah / ketarik */
+  display: block;
+  margin: 0 auto;
+}
+
+/* TEXT */
+.game-card h2 {
+  margin: 10px 0 5px;
+}
+
+.game-card p {
+  color: gray;
+}
+
+/* =========================
+  TOMBOL KEMBALI
+========================= */
+.back-btn {
+  margin-top: 40px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 15px;
+  background: red;
+  color: white;
+  cursor: pointer;
+}
+
+.back-icon {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: 0.2s;
+}
+
+.back-icon:hover {
+  transform: scale(1.1);
+}
+
+/* klik effect */
+.back-icon:active {
+  transform: scale(0.9);
+}
+
+.literasi-title {
+  text-align: center;
+  font-size: 40px;
+  font-family: "Titan One", cursive;
+  margin-top: 20px;
+  color: white;
+}
+
+/* =========================
+   HALAMAN SOAL
+========================= */
+/* TITLE */
+.literasi-title,
+.numerasi-title {
+  text-align: center;
+  font-size: 40px;
+  font-family: "Titan One", cursive;
+  margin-top: 60px;
+}
+
+/* WARNA TITLE */
+.literasi-title {
+  color: #ff4d4d;
+}
+
+.numerasi-title {
+  color: #ff4d4d;
+}
+
+/* BOX SOAL */
+.soal-box {
+  width: 700px;
+  min-height: 450px;
+  margin: 10px auto;
+  backdrop-filter: blur(0px);
+  border-radius: 40px;
+  padding: 25px;
+  text-align: center;
+}
+
+/* GAMBAR PETUNJUK */
+.hint-img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+/* KHUSUS GAMBAR NUMERASI */
+.numerasi-img {
+  width: 500px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* TEKS PETUNJUK */
+.hint-text{
+color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+.hint-desc {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 15px 25px;
+  border-radius: 20px;
+  width: fit-content;
+  margin: 20px auto;
+  border: 2px solid white;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* DROP AREA */
+.drop-box {
+  width: 300px;
+  min-height: 70px;
+  border: 2px dashed gray;
+  border-radius: 15px;
+  margin: 15px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+/* CONTAINER PILIHAN */
+.huruf-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* KOTAK PILIHAN */
+.huruf {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  font-weight: bold;
+  border-radius: 15px;
+  cursor: grab;
+  color: white;
+  transition: 0.2s;
+}
+
+/* KHUSUS NUMERASI */
+.numerasi-box .huruf {
+  width: 80px;
+  height: 80px;
+  font-size: 30px;
+}
+
+/* HOVER */
+.huruf:hover {
+  transform: scale(1.1);
+}
+
+/* WARNA RANDOM */
+.huruf:nth-child(1) {
+  background: #ff4d4d;
+}
+
+.huruf:nth-child(2) {
+  background: #4da6ff;
+}
+
+.huruf:nth-child(3) {
+  background: #4dff88;
+}
+
+.huruf:nth-child(4) {
+  background: #ffcc4d;
+}
+
+.huruf:nth-child(5) {
+  background: #b84dff;
+}
+
+.huruf:nth-child(6) {
+  background: #848491;
+}
+
+.huruf:nth-child(7) {
+  background: #6bff7f;
+}
+
+/* BUTTON */
+.cek-btn {
+  margin-top: 15px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 15px;
+  background: #4facfe;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* HOVER */
+.cek-btn:hover {
+  transform: scale(1.05);
+}
+
+/* KLIK */
+.cek-btn:active {
+  transform: scale(0.95);
+}
+
+/* =========================
+   NUMERASI PILIHAN
+========================= */
+.pilihan-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.pilihan-btn {
+  width: 70px;
+  height: 70px;
+  border: none;
+  border-radius: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* WARNA */
+.pilihan-btn:nth-child(1) {
+  background: #ff4d4d;
+}
+
+.pilihan-btn:nth-child(2) {
+  background: #4da6ff;
+}
+
+.pilihan-btn:nth-child(3) {
+  background: #4dff88;
+}
+
+.pilihan-btn:nth-child(4) {
+  background: #ffcc4d;
+}
+
+/* HOVER */
+.pilihan-btn:hover {
+  transform: scale(1.1);
+}
+
+/* KLIK */
+.pilihan-btn:active {
+  transform: scale(0.95);
+}
+
+/* =========================
+  HALAMAN HASIL
+========================= */
+.popup {
+  position: fixed;
+  inset: 0;
+  background: transparent; /* 🔥 lebih soft (tidak terlalu hitam) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* BOX POPUP */
+.popup-box {
+  background: transparent; /* 🔥 hilangkan box putih */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* GAMBAR BESAR & CLEAN */
+.popup-box img {
+  width: 1000px;
+  height: 100 vh;
+  border-radius: 20px;
+  animation: pop 0.25s ease;
+}
+
+/* BUTTON OK DI BAWAH GAMBAR */
+.popup-box button {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 12px;
+  background: #ffcc4d;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ANIMASI */
+@keyframes pop {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* =========================
+  SOUND
+========================= */
+.sound-box {
+  position: fixed;
+  top: 60px;
+  left: 5px;
+  z-index: 999;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* TOMBOL SOUND */
+.sound-btn {
+  width: 70px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sound-btn:hover {
+  transform: scale(1.08);
+}
+
+.sound-btn:active {
+  transform: scale(0.95);
+}
+
+/* BOX VOLUME */
+.volume-container {
+  padding: 10px 15px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+  display: none;
+}
+
+/* SLIDER */
+#volumeSlider {
+  width: 120px;
+}
+
+/* =========================
+  INFO
+========================= */
+.info-box {
+  width: 500px;
+  background: white;
+  border-radius: 30px;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 70px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: pop 0.3s ease;
+  position: relative;
+}
+
+/* JUDUL */
+.info-box h1 {
+  color: #ff9800;
+  margin-bottom: 15px;
+}
+
+/* SUB JUDUL */
+.info-box h2 {
+  margin-top: 25px;
+  color: #4facfe;
+}
+
+/* PARAGRAF */
+.info-box p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* TOMBOL */
+.info-box button {
+  margin-top: 80px; /* 🔥 tombol turun */
+  padding: 12px 25px;
+  border: none;
+  border-radius: 15px;
+  background: #ff9800;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* HOVER */
+.info-box button:hover {
+  transform: scale(1.05);
+}
+
+/* KLIK */
+.info-box button:active {
+  transform: scale(0.95);
+}
+
+/* =========================
+  POPUP OUT
+========================= */
+
+.out-box {
+  width: 420px;
+  background: white;
+  border-radius: 30px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: pop 0.3s ease;
+}
+
+.out-box h1 {
+  color: #ff4d4d;
+}
+
+.out-box p {
+  font-size: 18px;
+  color: #444;
+  margin-top: 15px;
+}
+
+/* BUTTON CONTAINER */
+.out-button {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* BUTTON */
+.out-button button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* BUTTON IYA */
+.out-button button:first-child {
+  background: #ff4d4d;
+}
+
+/* BUTTON TIDAK */
+.out-button button:last-child {
+  background: #4facfe;
+}
+
+/* HOVER */
+.out-button button:hover {
+  transform: scale(1.05);
+}
+
+/* KLIK */
+.out-button button:active {
+  transform: scale(0.95);
+}
+
+/* =========================
+   PENCAPAIAN
+========================= */
+.achievement-title {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 50px;
+  font-family: "Titan One", cursive;
+  color: gold;
+}
+
+.achievement-box {
+  width: 500px;
+  margin: 40px auto;
+  padding: 40px;
+  border-radius: 40px;
+  backdrop-filter: blur(0px);
+  text-align: center;
+}
+
+.trophy-img {
+  width: 500px;
+  margin-bottom: 20px;
+}
+
+.achievement-box h2 {
+  color: white;
+  font-size: 30px;
+  margin: 15px 0;
+}
+
+.main-menu-btn {
+  margin-top: 30px;
+  padding: 15px 35px;
+  border: none;
+  border-radius: 20px;
+  background: #4facfe;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.main-menu-btn:hover {
+  transform: scale(1.05);
+}
+
+.main-menu-btn:active {
+  transform: scale(0.95);
+}
+
+/* =========================
+   BUTTON RESET
+========================= */
+.reset-btn {
+  margin-top: 15px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 15px;
+  background: #ff9800;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.reset-btn:hover {
+  transform: scale(1.05);
+}
+
+.reset-btn:active {
+  transform: scale(0.95);
+}
